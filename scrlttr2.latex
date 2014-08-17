@@ -1,0 +1,212 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{scrlttr2}
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+$if(linestretch)$
+\usepackage{setspace}
+\setstretch{$linestretch$}
+$endif$
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+$if(euro)$
+  \usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+$if(mainfont)$
+    \setmainfont{$mainfont$}
+$endif$
+$if(sansfont)$
+    \setsansfont{$sansfont$}
+$endif$
+$if(monofont)$
+    \setmonofont[Mapping=tex-ansi]{$monofont$}
+$endif$
+$if(mathfont)$
+    \setmathfont(Digits,Latin,Greek){$mathfont$}
+$endif$
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+$if(listings)$
+\usepackage{listings}
+$endif$
+$if(lhs)$
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+$endif$
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+$endif$
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+$if(lang)$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{$mainlang$}
+\else
+  \usepackage[$lang$]{babel}
+\fi
+$endif$
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\newkomavar{opening}
+\newkomavar{closing}
+
+$for(letteroption)$
+\LoadLetterOption{$letteroption$}
+$endfor$
+
+$if(addresseeimage)$\setkomavar{addresseeimage}{$addresseeimage$}$endif$
+$if(backaddress)$\setkomavar{backaddress}{$backaddress$}\KOMAoptions{backaddress=true}$endif$
+$if(customer)$\setkomavar{customer}{$customer$}$endif$
+$if(date)$\setkomavar{date}{$date$}$endif$
+$if(fromaddress)$
+\setkomavar{fromaddress}{%
+$for(fromaddress)$
+$fromaddress$$sep$\\
+$endfor$}
+$endif$
+$if(frombank)$\setkomavar{frombank}{$frombank$}$endif$
+$if(fromemail)$\setkomavar{fromemail}{$fromemail$}\KOMAoptions{fromemail=true}$endif$
+$if(fromfax)$\setkomavar{fromfax}{$fromfax$}\KOMAoptions{fromfax=true}$endif$
+$if(fromlogo)$\setkomavar{fromlogo}{$fromlogo$}\KOMAoptions{fromlogo=true}$endif$
+$if(frommobilephone)$\setkomavar{frommobilephone}{$frommobilephone$}\KOMAoptions{frommobilephone=true}$endif$
+$if(fromname)$\setkomavar{fromname}{$fromname$}$endif$
+$if(fromphone)$\setkomavar{fromphone}{$fromphone$}\KOMAoptions{fromphone=true}$endif$
+$if(fromurl)$\setkomavar{fromurl}{$fromurl$}\KOMAoptions{fromurl=true}$endif$
+$if(fromzipcode)$\setkomavar{fromzipcode}{$fromzipcode$}$endif$
+$if(invoice)$\setkomavar{invoice}{$invoice$}$endif$
+$if(location)$\setkomavar{location}{$location$}$endif$
+$if(myref)$\setkomavar{myref}{$myref$}$endif$
+$if(place)$\setkomavar{place}{$place$}$endif$
+$if(PPdatamatrix)$\setkomavar{PPdatamatrix}{$PPdatamatrix$}$endif$
+$if(PPcode)$\setkomavar{PPcode}{$PPcode$}$endif$
+$if(signature)$\setkomavar{signature}{$signature$}$endif$
+$if(specialmail)$\setkomavar{specialmail}{$specialmail$}$endif$
+$if(subject)$\setkomavar{subject}{$subject$}$endif$
+$if(title)$\setkomavar{title}{$title$}$endif$
+$if(toaddress)$\setkomavar{toaddress}{$toaddress$}\KOMAoptions{toaddress=true}$endif$
+$if(toname)$\setkomavar{toname}{$toname$}\KOMAoptions{toname=true}$endif$
+$if(yourmail)$\setkomavar{yourmail}{$yourmail$}$endif$
+$if(yourref)$\setkomavar{yourref}{$yourref$}$endif$
+$if(opening)$\setkomavar{opening}{$opening$}$endif$
+$if(closing)$\setkomavar{closing}{$closing$}$endif$
+
+
+\KOMAoptions{
+fromalign=right
+}
+
+\begin{document}
+
+\begin{letter}{%
+$for(to)$
+$to$\\
+$endfor$
+}
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+
+\opening{\usekomavar{opening}}
+
+$body$
+
+\closing{\usekomavar{closing}}
+
+$if(ps)$\ps{$ps$}$endif$
+
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{letter}
+\end{document}

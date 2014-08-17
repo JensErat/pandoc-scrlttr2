@@ -1,0 +1,18 @@
+\ProvidesFile{example.lco}
+
+\setkomavar{fromname}{John Doe}
+\setkomavar{fromaddress}{%
+	42 Main Street\\
+	12345 Anytown
+	USA
+}
+\setkomavar{fromemail}{john.doe@example.org}\KOMAoptions{fromemail=true}
+\setkomavar{fromfax}{+1 888 555 4223}\KOMAoptions{fromfax=true}
+\setkomavar{frommobilephone}{+1 888 555 2323}\KOMAoptions{frommobilephone=true}
+\setkomavar{fromphone}{+1 888 555 4242}\KOMAoptions{fromphone=true}
+\setkomavar{fromurl}{http://www.example.org}\KOMAoptions{fromurl=true}
+
+\setkomavar{place}{Anytown}
+
+\setkomavar{opening}{Dear Sir or Madam,}
+\setkomavar{closing}{Sincerely,}
