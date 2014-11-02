@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+
+import os, sys, argparse
+
+# Read input and output arguments, keeping all others as they are
+parser = argparse.ArgumentParser(prog='panletter',
+				 formatter_class=argparse.RawDescriptionHelpFormatter,
+                                 description="""
+Convert one or more markdown files to a letter in PDF or LaTeX format using
+the scrlttr2 template. For more information on using this tool and the template,
+visit
+                 https://github.com/JensErat/pandoc-scrlttr2
+
+(c) Jens Erat 2014, BSD-License
+
+""",
+                                 epilog='All pandoc options can be used.')
+parser.add_argument('-o', '--output',
+                    help="""
+Output file name. If ommited, the first input's file name with .pdf extension
+will be used. To generate a LaTeX file, pass a filename with .tex extension.
+""",
+                    metavar='file')
+parser.add_argument('input',
+                    nargs='+',
+                    help='one or more input files',
+                    metavar='file')
+(files, options) = parser.parse_known_args()
+
+# If output is not set, use first input file's name
+if files.output is None:
+  files.output = os.path.splitext(files.input[0])[0] + '.pdf'
+
+# Call pandoc
+os.execvp('pandoc', [
+                      'pandoc',
+                      '--template=scrlttr2',
+                      '-o', files.output
+                    ] + options + files.input)
