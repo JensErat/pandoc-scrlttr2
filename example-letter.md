@@ -2,7 +2,7 @@
 letteroption:
 - DIN					# typeset following DIN norm
 - example				# loads example style file example.lco
-to:						# required, multiline value as YAML list
+to:					# required, multiline value as YAML list
 - Maurice Moss
 - Reynholm Industries
 - 123 Carenden Road
@@ -10,7 +10,7 @@ to:						# required, multiline value as YAML list
 - EC5M 8AJ
 - GREAT BRITAIN
 lang: english
-subject: subject
+subject: Lorem Ipsum
 opening: Dear Moss,
 closing: Sincerely,
 ...

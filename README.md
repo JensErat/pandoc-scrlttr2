@@ -6,11 +6,25 @@ This template extends [Pandoc]'s original LaTeX-template by parsing variables an
 
 Obviously, you need Pandoc, a LaTeX distribution of your choice and KOMA-script installed. In Debian-based distributions, you can install both using `apt-get install texlive pandoc` (KOMA-script is included in texlive by default). For other operating systems, read the respective installation manuals.
 
+### Installing the Template
+
 To install the template `scrlttr2.latex`, either store it in the working directory or move it to the template folder in Pandoc's [data directory][general options], usually `~/.pandoc/templates`.
+
+### Manual Typesetting
 
 To typeset a letter, run Pandoc with a `--template scrlttr2` parameter, and either using the PDF or LaTeX writer. For creating a printable PDF file, run
 
     pandoc --template scrlttr2 -o example-letter.pdf example-letter.md
+
+### Using the Wrapper Script
+
+To make typesetting of letters more convenient, a wrapper script is included, which takes care of the most common use case: typesetting some `example-letter.md`, which is stored as `example-letter.pdf`.
+
+To install the wrapper script `panletter`, copy or link it into your `$PATH`. The usual system-wide location would be `/usr/local/bin`, you can of course also choose any other location or reference the script directly. The basic usage is as easy as
+
+    pandletter example-letter.md
+
+For more details, view `panletter --help`.
 
 ## Letter Metadata in a YAML Metadata Block
 
