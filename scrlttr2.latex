@@ -204,6 +204,8 @@ $body$
 
 $if(ps)$\ps{$ps$}$endif$
 
+$if(encl)$\encl{$encl$}$endif$
+
 $for(include-after)$
 $include-after$
 
