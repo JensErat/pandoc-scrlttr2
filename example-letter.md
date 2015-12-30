@@ -1,14 +1,14 @@
 ---
 letteroption:
-- DIN					# typeset following DIN norm
-- example				# loads example style file example.lco
-to:					# required, multiline value as YAML list
-- Maurice Moss
-- Reynholm Industries
-- 123 Carenden Road
-- LONDON
-- EC5M 8AJ
-- GREAT BRITAIN
+- DIN          # typeset following DIN norm
+- example      # loads example style file example.lco
+to: |          # required, YAML multiline value
+  Maurice Moss  
+  Reynholm Industries  
+  123 Carenden Road  
+  LONDON  
+  EC5M 8AJ  
+  GREAT BRITAIN
 lang: english
 subject: Lorem Ipsum
 opening: Dear Moss,

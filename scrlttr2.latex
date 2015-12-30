@@ -145,12 +145,7 @@ $if(addresseeimage)$\setkomavar{addresseeimage}{$addresseeimage$}$endif$
 $if(backaddress)$\setkomavar{backaddress}{$backaddress$}\KOMAoptions{backaddress=true}$endif$
 $if(customer)$\setkomavar{customer}{$customer$}$endif$
 $if(date)$\setkomavar{date}{$date$}$endif$
-$if(fromaddress)$
-\setkomavar{fromaddress}{%
-$for(fromaddress)$
-$fromaddress$$sep$\\
-$endfor$}
-$endif$
+$if(fromaddress)$\setkomavar{fromaddress}{$fromaddress$}$endif$
 $if(frombank)$\setkomavar{frombank}{$frombank$}$endif$
 $if(fromemail)$\setkomavar{fromemail}{$fromemail$}\KOMAoptions{fromemail=true}$else$\KOMAoptions{fromemail=false}$endif$
 $if(fromfax)$\setkomavar{fromfax}{$fromfax$}\KOMAoptions{fromfax=true}$else$\KOMAoptions{fromfax=false}$endif$
@@ -186,9 +181,7 @@ fromalign=right
 \begin{document}
 
 \begin{letter}{%
-$for(to)$
-$to$\\
-$endfor$
+$to$
 }
 
 $for(include-before)$
