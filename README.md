@@ -4,6 +4,7 @@ This template extends [Pandoc]'s original LaTeX-template by parsing variables an
 
 ## Changelog
 
+- **2016-02-11**: Merged changes to Pandoc's `default.latex` template to fetch up with changes in Pandoc. Use [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) language codes instead of the old bable names now, for example `en` or `en-US` instead of `english`, `de-DE` instead of `ngerman`.
 - **2015-12-30**: To and from address fields are now standard multiline markdown fields instead of lists, which is easier to read and handle and potentially available for all variables.
 
 ## Requirements, Installation and Usage
