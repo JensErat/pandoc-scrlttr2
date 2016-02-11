@@ -9,7 +9,7 @@ to: |          # required, YAML multiline value
   LONDON  
   EC5M 8AJ  
   GREAT BRITAIN
-lang: english
+lang: en
 subject: Lorem Ipsum
 opening: Dear Moss,
 closing: Sincerely,
