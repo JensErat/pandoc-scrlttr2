@@ -207,6 +207,14 @@ $endif$
 \newkomavar{opening}
 \newkomavar{closing}
 
+% Default to disabled fields, can be overridden by setting pandoc variables or .lco files
+\KOMAoptions{fromemail=false}
+\KOMAoptions{fromfax=false}
+\KOMAoptions{fromlogo=false}
+\KOMAoptions{frommobilephone=false}
+\KOMAoptions{fromphone=false}
+\KOMAoptions{fromurl=false}
+
 $for(letteroption)$
 \LoadLetterOption{$letteroption$}
 $endfor$
@@ -217,13 +225,13 @@ $if(customer)$\setkomavar{customer}{$customer$}$endif$
 $if(date)$\setkomavar{date}{$date$}$endif$
 $if(fromaddress)$\setkomavar{fromaddress}{$fromaddress$}$endif$
 $if(frombank)$\setkomavar{frombank}{$frombank$}$endif$
-$if(fromemail)$\setkomavar{fromemail}{$fromemail$}\KOMAoptions{fromemail=true}$else$\KOMAoptions{fromemail=false}$endif$
-$if(fromfax)$\setkomavar{fromfax}{$fromfax$}\KOMAoptions{fromfax=true}$else$\KOMAoptions{fromfax=false}$endif$
-$if(fromlogo)$\setkomavar{fromlogo}{$fromlogo$}\KOMAoptions{fromlogo=true}$else$\KOMAoptions{fromlogo=false}$endif$
-$if(frommobilephone)$\setkomavar{frommobilephone}{$frommobilephone$}\KOMAoptions{frommobilephone=true}$else$\KOMAoptions{frommobilephone=false}$endif$
+$if(fromemail)$\setkomavar{fromemail}{$fromemail$}\KOMAoptions{fromemail=true}$endif$
+$if(fromfax)$\setkomavar{fromfax}{$fromfax$}\KOMAoptions{fromfax=true}$endif$
+$if(fromlogo)$\setkomavar{fromlogo}{$fromlogo$}\KOMAoptions{fromlogo=true}$endif$
+$if(frommobilephone)$\setkomavar{frommobilephone}{$frommobilephone$}\KOMAoptions{frommobilephone=true}$endif$
 $if(fromname)$\setkomavar{fromname}{$fromname$}$endif$
-$if(fromphone)$\setkomavar{fromphone}{$fromphone$}\KOMAoptions{fromphone=true}$else$\KOMAoptions{fromphone=false}$endif$
-$if(fromurl)$\setkomavar{fromurl}{$fromurl$}\KOMAoptions{fromurl=true}$else$\KOMAoptions{fromurl=false}$endif$
+$if(fromphone)$\setkomavar{fromphone}{$fromphone$}\KOMAoptions{fromphone=true}$endif$
+$if(fromurl)$\setkomavar{fromurl}{$fromurl$}\KOMAoptions{fromurl=true}$endif$
 $if(fromzipcode)$\setkomavar{fromzipcode}{$fromzipcode$}$endif$
 $if(invoice)$\setkomavar{invoice}{$invoice$}$endif$
 $if(location)$\setkomavar{location}{$location$}$endif$
