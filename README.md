@@ -62,7 +62,7 @@ The only variable required by `scrlttr2` is `to`.
 
 A bunch of KOMA-script variables for `scrlttr2` are exposed, especially all that reflect actual content (like recipient address, ...).  Variables not exposed are for example seperators.
 
-Exposed variables, that can directly be used are `addresseeimage`, `backaddress`, `customer`, `date`, `fromaddress`, `fromaddress`, `frombank`, `fromemail`, `fromfax`, `fromlogo`, `frommobilephone`, `fromname`, `fromphone`, `fromurl`, `fromzipcode`, `invoice`, `location`, `myref`, `place`, `PPdatamatrix`, `PPcode`, `signature`, `specialmail`, `subject`, `title`, `toaddress`, `toname`, `yourmail` and `yourref`. For more details on their use, refer to the [KOMA-script manual].
+Exposed variables, that can directly be used are `addresseeimage`, `backaddress`, `customer`, `date`, `fromaddress`, `frombank`, `fromemail`, `fromfax`, `fromlogo`, `frommobilephone`, `fromname`, `fromphone`, `fromurl`, `fromzipcode`, `invoice`, `location`, `myref`, `place`, `PPdatamatrix`, `PPcode`, `signature`, `specialmail`, `subject`, `title`, `toaddress`, `toname`, `yourmail` and `yourref`. For more details on their use, refer to the [KOMA-script manual].
 
 ### Template Variables
 
