@@ -2,6 +2,11 @@
 
 This template extends [Pandoc]'s original LaTeX-template by parsing variables and putting them into the appropriate [KOMA-script] `scrlttr2` variables.
 
+## Changelog
+
+- **2016-02-11**: Merged changes to Pandoc's `default.latex` template to fetch up with changes in Pandoc. Use [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) language codes instead of the old bable names now, for example `en` or `en-US` instead of `english`, `de-DE` instead of `ngerman`.
+- **2015-12-30**: To and from address fields are now standard multiline markdown fields instead of lists, which is easier to read and handle and potentially available for all variables.
+
 ## Requirements, Installation and Usage
 
 Obviously, you need Pandoc, a LaTeX distribution of your choice and KOMA-script installed. In Debian-based distributions, you can install both using `apt-get install texlive pandoc` (KOMA-script is included in texlive by default). For other operating systems, read the respective installation manuals.
@@ -28,22 +33,22 @@ For more details, view `panletter --help`.
 
 ## Letter Metadata in a YAML Metadata Block
 
-There are two ways for setting those variables, either by passing them as [`pandoc` command line arguments][writer options] or storing them in a [YAML metadata block].
+There are two ways for setting those variables, either by passing them as [`pandoc` command line arguments][writer options] or storing them in a [YAML metadata block]. YAML also allows multi-line string values, which are introduced by a pipe symbol `|`. As the value is interpreted as markdown again, you might be required to add two spaces to enforce line wraps, for example in multiline address field. This also works great for the `fromaddress`, `opening`, `closing` and possibly other variables.
 
 An example YAML metadata block:
 
 ```yaml
 ---
 letteroption:
-- DIN					# typeset following DIN norm
-- example				# loads example style file example.lco
-to:						# required, multiline value as YAML list
-- Maurice Moss
-- Reynholm Industries
-- 123 Carenden Road
-- LONDON
-- EC5M 8AJ
-- GREAT BRITAIN
+- DIN         # typeset following DIN norm
+- example     # loads example style file example.lco
+to: |         # required, YAML multiline value with double space linebreaks
+  Maurice Moss  
+  Reynholm Industries  
+  123 Carenden Road  
+  LONDON  
+  EC5M 8AJ  
+  GREAT BRITAIN
 lang: english
 subject: subject
 opening: Dear Moss,
@@ -51,15 +56,13 @@ closing: Sincerely,
 ...
 ```
 
-Multi-line values for the `to` and `fromaddress` variables can be passed as YAML lists.
-
 The only variable required by `scrlttr2` is `to`.
 
 ### KOMA-Script Variables
 
 A bunch of KOMA-script variables for `scrlttr2` are exposed, especially all that reflect actual content (like recipient address, ...).  Variables not exposed are for example seperators.
 
-Exposed variables, that can directly be used are `addresseeimage`, `backaddress`, `customer`, `date`, `fromaddress`, `fromaddress`, `frombank`, `fromemail`, `fromfax`, `fromlogo`, `frommobilephone`, `fromname`, `fromphone`, `fromurl`, `fromzipcode`, `invoice`, `location`, `myref`, `place`, `PPdatamatrix`, `PPcode`, `signature`, `specialmail`, `subject`, `title`, `toaddress`, `toname`, `yourmail` and `yourref`. For more details on their use, refer to the [KOMA-script manual].
+Exposed variables, that can directly be used are `addresseeimage`, `backaddress`, `customer`, `date`, `fromaddress`, `frombank`, `fromemail`, `fromfax`, `fromlogo`, `frommobilephone`, `fromname`, `fromphone`, `fromurl`, `fromzipcode`, `invoice`, `location`, `myref`, `place`, `PPdatamatrix`, `PPcode`, `signature`, `specialmail`, `subject`, `title`, `toaddress`, `toname`, `yourmail` and `yourref`. For more details on their use, refer to the [KOMA-script manual].
 
 ### Template Variables
 
