@@ -4,6 +4,7 @@ This template extends [Pandoc]'s original LaTeX-template by parsing variables an
 
 ## Changelog
 
+- **2016-09-10**: Add KOMA-Script variables `fromaddress`, `fromalign` 
 - **2016-02-11**: Merged changes to Pandoc's `default.latex` template to fetch up with changes in Pandoc. Use [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) language codes instead of the old bable names now, for example `en` or `en-US` instead of `english`, `de-DE` instead of `ngerman`.
 - **2015-12-30**: To and from address fields are now standard multiline markdown fields instead of lists, which is easier to read and handle and potentially available for all variables.
 
@@ -27,7 +28,7 @@ To make typesetting of letters more convenient, a wrapper script is included, wh
 
 To install the wrapper script `panletter`, copy or link it into your `$PATH`. The usual system-wide location would be `/usr/local/bin`, you can of course also choose any other location or reference the script directly. The basic usage is as easy as
 
-    pandletter example-letter.md
+    panletter example-letter.md
 
 For more details, view `panletter --help`.
 
@@ -62,7 +63,7 @@ The only variable required by `scrlttr2` is `to`.
 
 A bunch of KOMA-script variables for `scrlttr2` are exposed, especially all that reflect actual content (like recipient address, ...).  Variables not exposed are for example seperators.
 
-Exposed variables, that can directly be used are `addresseeimage`, `backaddress`, `customer`, `date`, `fromaddress`, `frombank`, `fromemail`, `fromfax`, `fromlogo`, `frommobilephone`, `fromname`, `fromphone`, `fromurl`, `fromzipcode`, `invoice`, `location`, `myref`, `place`, `PPdatamatrix`, `PPcode`, `signature`, `specialmail`, `subject`, `title`, `toaddress`, `toname`, `yourmail` and `yourref`. For more details on their use, refer to the [KOMA-script manual].
+Exposed variables, that can directly be used are `addresseeimage`, `backaddress`, `customer`, `date`, `firstfoot`, `fromaddress`, `fromalign`, `frombank`, `fromemail`, `fromfax`, `fromlogo`, `frommobilephone`, `fromname`, `fromphone`, `fromurl`, `fromzipcode`, `invoice`, `location`, `myref`, `place`, `PPdatamatrix`, `PPcode`, `signature`, `specialmail`, `subject`, `title`, `toaddress`, `toname`, `yourmail` and `yourref`. For more details on their use, refer to the [KOMA-script manual].
 
 ### Template Variables
 
