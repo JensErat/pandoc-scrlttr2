@@ -214,6 +214,7 @@ $endif$
 \KOMAoptions{frommobilephone=false}
 \KOMAoptions{fromphone=false}
 \KOMAoptions{fromurl=false}
+\KOMAoptions{fromalign=right}
 
 $for(letteroption)$
 \LoadLetterOption{$letteroption$}
@@ -221,6 +222,7 @@ $endfor$
 
 $if(addresseeimage)$\setkomavar{addresseeimage}{$addresseeimage$}$endif$
 $if(backaddress)$\setkomavar{backaddress}{$backaddress$}\KOMAoptions{backaddress=true}$endif$
+$if(fromalign)$\KOMAoptions{fromalign=$fromalign$}$endif$
 $if(customer)$\setkomavar{customer}{$customer$}$endif$
 $if(date)$\setkomavar{date}{$date$}$endif$
 $if(fromaddress)$\setkomavar{fromaddress}{$fromaddress$}$endif$
@@ -250,11 +252,10 @@ $if(yourmail)$\setkomavar{yourmail}{$yourmail$}$endif$
 $if(yourref)$\setkomavar{yourref}{$yourref$}$endif$
 $if(opening)$\setkomavar{opening}{$opening$}$endif$
 $if(closing)$\setkomavar{closing}{$closing$}$endif$
+$if(firstfoot)$\setkomavar{firstfoot}{$firstfoot$}$endif$
 
 
-\KOMAoptions{
-fromalign=right
-}
+
 
 \begin{document}
 
