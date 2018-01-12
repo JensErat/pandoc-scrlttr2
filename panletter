@@ -14,7 +14,20 @@ visit
 (c) Jens Erat 2014, BSD-License
 
 """,
-                                 epilog='All pandoc options can be used.')
+                                 epilog='''
+All pandoc options can be used.
+
+Example: panletter -fmarkdown+pipe_tables input-letter.md 
+
+This example will enable the pandoc extension pipe_tables and allow to
+include tables in the letter.
+
+Beware that there is no space allowed between the pandoc option switch
+(here -f) and the parameter, as otherwise panletter will consider the
+parameter as an input file.
+'''
+                                )
+
 parser.add_argument('-o', '--output',
                     help="""
 Output file name. If ommited, the first input's file name with .pdf extension
