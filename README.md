@@ -132,6 +132,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 [general options]: http://johnmacfarlane.net/pandoc/README.html#general-options
 [writer options]: http://johnmacfarlane.net/pandoc/README.html#general-writer-options
 [YAML metadata block]: http://johnmacfarlane.net/pandoc/README.html#extension-yaml_metadata_block
-[KOMA-script manual]: http://ctan.mackichan.com/macros/latex/contrib/koma-script/doc/scrguien.pdf
+[KOMA-script manual]: http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
 [DIN 676]: http://de.wikipedia.org/wiki/DIN_676
 [texmf]: http://tex.stackexchange.com/q/81710/11198
