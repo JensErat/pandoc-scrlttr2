@@ -50,14 +50,20 @@ to: |         # required, YAML multiline value with double space linebreaks
   LONDON  
   EC5M 8AJ  
   GREAT BRITAIN
-lang: english
-subject: subject
+lang: en
+subject: Lorem Ipsum
 opening: Dear Moss,
 closing: Sincerely,
 ...
 ```
 
 The only variable required by `scrlttr2` is `to`.
+
+The compiled result will then look like this:
+
+![alt Letter](/example-letter.png)
+
+You can also download [the compiled PDF](/example-letter.pdf).
 
 ### KOMA-Script Variables
 
